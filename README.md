@@ -13,6 +13,16 @@ APIs.
   * Use the `-d` option for a dry-run and use `-p` to print the output for
     comparison
 
+### Included scripts
+
+```
+jscodeshift -t relay-codemod/transforms/upgrade-store-api-0.7.js <file>
+```
+
+Updates method calls on `Relay.Store` that were removed in Relay 0.7.0:
+
+* `Relay.Store.update` => `Relay.Store.commitUpdate`
+
 ### Recast options
 
 Options to [recast](https://github.com/benjamn/recast)'s printer can be provided
