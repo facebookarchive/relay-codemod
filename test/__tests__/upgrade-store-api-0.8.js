@@ -9,8 +9,8 @@
 
 'use strict';
 
-describe('Relay.Store API upgrade for v0.7.0', () => {
+describe('Relay.Store API upgrade for v0.8.0', () => {
   it('transforms correctly', () => {
-    test('upgrade-store-api-0.7', 'upgrade-store-api-0.7');
+    test('upgrade-store-api-0.8', 'upgrade-store-api-0.8');
   });
 });

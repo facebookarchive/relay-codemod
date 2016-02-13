@@ -16,10 +16,10 @@ APIs.
 ### Included scripts
 
 ```
-jscodeshift -t relay-codemod/transforms/upgrade-store-api-0.7.js <file>
+jscodeshift -t relay-codemod/transforms/upgrade-store-api-0.8.js <file>
 ```
 
-Updates method calls on `Relay.Store` that were removed in Relay 0.7.0:
+Updates method calls on `Relay.Store` that were removed in Relay 0.8.0:
 
 * `Relay.Store.update` => `Relay.Store.commitUpdate`
 
