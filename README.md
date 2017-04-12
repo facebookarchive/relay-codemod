@@ -23,6 +23,15 @@ Updates method calls on `Relay.Store` that were removed in Relay 0.8.0:
 
 * `Relay.Store.update` => `Relay.Store.commitUpdate`
 
+```
+jscodeshift -t relay-codemod/transforms/upgrade-requires-1.0.js <file>
+```
+
+Replaces requires to /classic for upgrading to 1.0.0:
+
+* `require('react-relay')` => `require('react-relay/classic')`
+* `from 'react-relay'` => `from 'react-relay/classic'`
+
 ### Recast options
 
 Options to [recast](https://github.com/benjamn/recast)'s printer can be provided
