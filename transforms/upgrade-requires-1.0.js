@@ -12,6 +12,9 @@
 module.exports = function(file, api, options) {
   const j = api.jscodeshift;
   let collection = j(file.source);
+  const printOptions =
+    options.printOptions || {quote: 'single', trailingComma: true};
+
   collection = collection
     .find(j.ImportDeclaration)
     .filter(path => path.value.source.value === 'react-relay')
@@ -29,6 +32,5 @@ module.exports = function(file, api, options) {
     .forEach(path => {
       path.value.arguments[0].value = 'react-relay/classic'
     });
-  console.log('???');
-  return collection.toSource();
+    return collection.toSource(printOptions);
 };
