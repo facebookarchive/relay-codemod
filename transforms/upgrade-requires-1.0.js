@@ -29,8 +29,9 @@ module.exports = function(file, api, options) {
       path.value.arguments[0] &&
       path.value.arguments[0].value === 'react-relay'
     )
-    .forEach(path => {
+    .forEach(path =>
       path.value.arguments[0].value = 'react-relay/classic'
-    });
-    return collection.toSource(printOptions);
+    );
+
+  return collection.toSource(printOptions);
 };
