@@ -14,8 +14,8 @@ module.exports = function(file, api, options) {
   const printOptions =
     options.printOptions || {quote: 'single', trailingComma: true};
 
-  const RELAY_REQUIRE =  /(\w+) Relay = require\(\'react-relay\/classic\'\);/;
-  const RELAY_IMPORT = /import Relay from \'react-relay\/classic\';/;
+  const RELAY_REQUIRE =  /(\w+) Relay = require\(\'react-relay\/classic\'\)/;
+  const RELAY_IMPORT = /import Relay from \'react-relay\/classic\'/;
 
   let source = file.source;
 
@@ -31,7 +31,7 @@ module.exports = function(file, api, options) {
       '$1 {\n' +
       '  createFragmentContainer,\n' +
       '  graphql,\n' +
-      '} = require(\'react-relay/compat\');'
+      '} = require(\'react-relay/compat\')'
     );
   } else if (source.search(RELAY_IMPORT) >= 0) {
     source = source.replace(
@@ -39,7 +39,7 @@ module.exports = function(file, api, options) {
       'import {\n' +
       '  createFragmentContainer,\n' +
       '  graphql,\n' +
-      '} from \'react-relay/compat\';'
+      '} from \'react-relay/compat\''
     );
   } else {
     // Does not meet current assumptions, skip
