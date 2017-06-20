@@ -11,11 +11,11 @@
 
 module.exports = function(file, api, options) {
   const j = api.jscodeshift;
-  let collection = j(file.source);
+  const collection = j(file.source);
   const printOptions =
     options.printOptions || {quote: 'single', trailingComma: true};
 
-  collection = collection
+  collection
     .find(j.ImportDeclaration)
     .filter(path => path.value.source.value === 'react-relay')
     .forEach(path => {
